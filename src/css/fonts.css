@@ -1,0 +1,50 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+h1, h2, .h1, .h2 {
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.125rem !important;
+    font-weight: 600;
+}
+
+h4, .h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+h3,
+h4,
+h5,
+h6,
+.h3,
+.h4,
+.h5,
+.h6 {
+    line-height: 1.4em;
+}
+
+div, h1, h2, h3, h4, h5, h6, p, s, span, a, li {
+    font-family: "Poppins", sans-serif !important;
+}
+
+div,
+a,
+input,
+body {
+    font-size: 0.85rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.display-2, .display-3, .display-4, .display-5 {
+    font-weight: 700;
+}
+
+.btn-sm {
+    font-size: 14px;
+}

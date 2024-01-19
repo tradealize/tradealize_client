@@ -1,0 +1,2 @@
+export const PRODUCTS_RECEIVED = "PRODUCTS_RECEIVED";
+export const SET_PRODUCT = "SET_PRODUCT";

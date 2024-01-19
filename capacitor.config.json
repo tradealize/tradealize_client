@@ -1,0 +1,6 @@
+{
+  "appId": "com.myrealtyclosers.app",
+  "appName": "mrc_client",
+  "webDir": "build",
+  "bundledWebRuntime": false
+}

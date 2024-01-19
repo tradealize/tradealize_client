@@ -1,0 +1,41 @@
+.input-group {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.input-group .form-control {
+    border: 0px;
+}
+
+.input-group-text {
+    border: 0px;
+    background-color: white;
+}
+
+.react-tel-input .form-control {
+    width: 100% !important;
+    padding: 12px 12px 12px 50px;
+}
+
+.form-label {
+    margin-bottom: 0px;
+}
+
+.form-control {
+    border: 0.5px solid rgb(229, 231, 235, 0.5);
+    padding-left: 16px !important;
+    border-radius: 25px;
+}
+
+textarea.form-control {
+    border-radius: 10px;
+}
+
+
+.form-control:focus-visible, .form-control:focus-within, .form-control:focus {
+    box-shadow: none;
+}
+
+#avatar__input-file {
+    padding-left: 8px !important;
+}
