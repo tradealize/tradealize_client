@@ -26,8 +26,6 @@ const useSocket = () => {
 
     currentSocket.on("connect", () => handleConnection(currentSocket));
 
-    currentSocket.on("output", handleOutput);
-
     currentSocket.on("message", handleMessage);
 
     currentSocket.on("message_stream", handleMessageStream);

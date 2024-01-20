@@ -4,8 +4,6 @@ import { MenuContext } from "../context/MenuContext";
 import useTranslations from "../hooks/useTranslations";
 import { ConversationsContext } from "../context/ConversationsContext";
 import ConversationList from "../components/conversations/ConversationList";
-import ConversationUpgrade from "../components/conversations/ConversationUpgrade";
-import ConversationTagCard from "../components/conversations/ConversationTagCard";
 import ConversationsActions from "../components/conversations/ConversationsActions";
 
 const Conversations = ({ tag }) => {
