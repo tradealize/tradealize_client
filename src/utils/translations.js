@@ -26,7 +26,7 @@ const translations = {
         lastName: "Apellido",
         email: "Correo Electrónico",
         phone: "Teléfono",
-        publicity: "¿Cómo te enteraste de bemodo ai?",
+        publicity: "¿Cómo te enteraste de Tradealize?",
       },
     },
     purchases: {
@@ -72,7 +72,7 @@ const translations = {
       no_password:
         "Te hemos enviado un correo electrónico para reestablecer tu contraseña",
       confirm_password: "Confirmar contraseña",
-      signup_reason: "¿Cómo te enteraste de Bemodo?",
+      signup_reason: "¿Cómo te enteraste de Tradealize?",
       signup_reasons: [
         "Recomendación",
         "Anuncio en Facebook",
@@ -239,7 +239,7 @@ const translations = {
         lastName: "Last Name",
         email: "Email",
         phone: "Phone Number",
-        publicity: "How do you know about bemodo ai?",
+        publicity: "How do you know about Tradealize?",
       },
     },
     purchases: {
@@ -276,7 +276,7 @@ const translations = {
         "Other",
       ],
       other_reason: "Tell us more",
-      signup_reason: "How did you find out about Bemodo?",
+      signup_reason: "How did you find out about Tradelize?",
       no_account: "Don't have an account yet?",
       has_account: "Already have an account?",
       confirm_password: "Confirm password.",

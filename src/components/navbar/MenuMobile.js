@@ -135,7 +135,7 @@ const MenuMobile = () => {
               {" "}
               <img
                 src={bunny}
-                alt="Bemodo Bunny"
+                alt="Logo"
                 style={{ maxWidth: 45 }}
                 className="d-inline-block"
               />{" "}
@@ -160,7 +160,7 @@ const MenuMobile = () => {
                 <div className="col-1">
                   <img
                     src={bunny}
-                    alt="Bemodo Bunny"
+                    alt="Logo"
                     style={{ maxWidth: 25, marginLeft: -6 }}
                     className="d-inline-block"
                   />

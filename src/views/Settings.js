@@ -21,7 +21,7 @@ const Settings = () => {
     <div className="container py-3">
       <h1 className="mb-3">Settings</h1>
       <p>
-        You need a valid OpenAI API Key to use BemodoAI Avatars.{" "}
+        You need a valid OpenAI API Key to use Tradelize Avatars.{" "}
         <Link to="/tutorials/1">Learn more.</Link>{" "}
       </p>
       <div className="card p-3 shadow-sm">

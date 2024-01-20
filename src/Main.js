@@ -6,7 +6,6 @@ import Landing from "./views/Landing";
 import Pricing from "./views/Pricing";
 import Checkout from "./views/Checkout";
 import useSocket from "./hooks/useSocket";
-import Walkthrough from "./views/Walkthrough";
 import Modal from "./components/global/Modal";
 import { handleURLParams } from "./utils/auth";
 import { Router, navigate } from "@reach/router";
@@ -113,10 +112,7 @@ const Main = () => {
         <Pricing path="/pricing" />
         <Checkout path="/checkout/:product_id" />
         {user !== null
-          ? [
-              <Panel key="panel" path="/*" />,
-              <Walkthrough key="welcome" path="/welcome" />,
-            ]
+          ? [<Panel key="panel" path="/*" />]
           : [
               <Landing key="landing" path="/" />,
               <Auth key="auth" path="/auth/*" />,

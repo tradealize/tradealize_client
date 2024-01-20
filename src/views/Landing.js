@@ -36,7 +36,7 @@ const Landing = () => {
           <Link to="/auth" className="navbar-brand">
             <img
               src={getValue(appconfig, "landing_logo_src")}
-              alt="Bemodo Bunny"
+              alt="Logo"
               style={{ height: 60, width: "auto", objectFit: "contain" }}
               className="d-inline-block"
             />{" "}

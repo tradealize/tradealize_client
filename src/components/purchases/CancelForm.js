@@ -15,7 +15,7 @@ const CancelForm = ({ purchase, cancelSubscription }) => {
 
   return (
     <div>
-      <p>Are you sure you want to cancel your subscription to BemodoAI?</p>{" "}
+      <p>Are you sure you want to cancel your subscription to Tradealize?</p>{" "}
       <p>
         You will have access up to your next invoice date and then you will lose
         access to all of your content.

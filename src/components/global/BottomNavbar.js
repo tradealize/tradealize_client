@@ -24,7 +24,7 @@ const BottomNavbar = () => {
               <img
                 className="mx-2 d-inline-block"
                 style={{ maxWidth: 35 }}
-                alt="Bemodo Fetch"
+                alt="Conversations"
                 src={bunny}
               />
             </Link>

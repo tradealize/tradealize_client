@@ -10,7 +10,7 @@ const Sorry = () => {
           style={{ maxWidth: 600 }}
         >
           <h1>Oops! You're out of credits.</h1>
-          <h3>You need an active subscription to BemodoAI</h3>
+          <h3>You need an active subscription to Tradealize</h3>
           <Link to="/pricing" className="btn btn-primary mb-3 w-100">
             Get Access Now!
           </Link>

@@ -74,7 +74,7 @@ const ProductCard = ({ product, isHome }) => {
           </li>
           <li className={`${isHome ? "text-white" : "text-dark"}`}>
             <i className="fa fa-check me-2 text-gradient"></i>Access to
-            BemodoAI's Community
+            Community
           </li>
           <li className={`${isHome ? "text-white" : "text-dark"}`}>
             <i className="fa fa-check me-2 text-gradient"></i>Step-by-Step Video

@@ -107,7 +107,7 @@ const SignUpPhone = () => {
               onChange={(phone) => setPhone(phone)}
             />
           </div>
-          <label>How did you find out about BemodoAI?</label>
+          <label>How did you find out about Tradealize?</label>
           <select
             className="form-control"
             value={signupReason}

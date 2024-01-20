@@ -1,5 +1,4 @@
 import { Link } from "@reach/router";
-import logo from "../../assets/bemodo-logo.png";
 
 import React from "react";
 
@@ -14,7 +13,10 @@ const CheckoutHeader = () => {
             </div>
             <div className="col-12 col-md-3 col-lg-2 text-end">
               <Link to="/">
-                <img src={logo} className="mw-100 w-100 d-block m-auto" />
+                <img
+                  src="https://tradealizebot.s3.us-west-1.amazonaws.com/tradealize-logo.png"
+                  className="mw-100 w-100 d-block m-auto"
+                />
               </Link>
             </div>
           </div>
