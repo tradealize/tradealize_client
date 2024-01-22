@@ -134,7 +134,7 @@ const SingleConversation = ({
     if (generating) {
       return (
         <div className="loading mb-3">
-          <span>Hold tight, Fetch is working on your instruction</span>
+          <span>Hold tight, Tradealize is working on your analysis.</span>
         </div>
       );
     }

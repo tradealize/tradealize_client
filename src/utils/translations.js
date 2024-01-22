@@ -1,10 +1,5 @@
 const translations = {
   es: {
-    superfetch: {
-      emptyInput: "Este valor no puede estar vacio",
-      fileTypes: "Tipos de Archivo:",
-      backEdit: "Regresar a Editar",
-    },
     admin: {
       users: {
         delete: "Eliminar Cliente",
@@ -212,11 +207,6 @@ const translations = {
     },
   },
   en: {
-    superfetch: {
-      emptyInput: "This value can't be empty",
-      fileTypes: "File types:",
-      backEdit: "Back to Edit",
-    },
     admin: {
       users: {
         delete: "Delete Customer",

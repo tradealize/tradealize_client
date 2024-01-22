@@ -3,8 +3,6 @@ import Auth from "./views/Auth";
 import Panel from "./views/Panel";
 import Favicon from "react-favicon";
 import Landing from "./views/Landing";
-import Pricing from "./views/Pricing";
-import Checkout from "./views/Checkout";
 import useSocket from "./hooks/useSocket";
 import Modal from "./components/global/Modal";
 import { handleURLParams } from "./utils/auth";
@@ -20,7 +18,6 @@ import { AppConfigContext } from "./context/AppConfigContext";
 import { MessagesContext } from "./context/MessagesContext";
 import { ConversationsContext } from "./context/ConversationsContext";
 import { getValue } from "./utils";
-import IntroVideo from "./components/welcome/IntroVideo";
 
 const Main = () => {
   const [socket, setupSocket] = useSocket();
@@ -70,12 +67,8 @@ const Main = () => {
       }
 
       const route = window.location.pathname;
-      if (route.includes("login")) {
+      if (route.includes("login") || route.includes("auth")) {
         navigate("/");
-      }
-
-      if (user.show_video) {
-        setTimeout(handleVideo, 1000);
       }
     }
   }, [user]);
@@ -83,10 +76,6 @@ const Main = () => {
   useEffect(() => {
     if (refresh) handleRefresh();
   }, [refresh]);
-
-  const handleVideo = () => {
-    modalComponent("Welcome", <IntroVideo />, { size: "lg" });
-  };
 
   const handleRefresh = () => {
     modalComponent("", <LoginForm handleCallback={clearModal} />);
@@ -109,8 +98,6 @@ const Main = () => {
     <div id="main" className="container-fluid px-0 overflow-hidden">
       {renderFavicon()}
       <Router className="h-100 overflow-hidden">
-        <Pricing path="/pricing" />
-        <Checkout path="/checkout/:product_id" />
         {user !== null
           ? [<Panel key="panel" path="/*" />]
           : [

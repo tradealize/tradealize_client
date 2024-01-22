@@ -1049,20 +1049,6 @@ div.app-landing {
   height: 28px;
 }
 
-.super-fetch__form {
-  height: calc(100% - 105px);
-}
-.super-fetch__generate-container {
-  height: 90px;
-  position: absolute;
-  width: 100%;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  margin: auto;
-  right: 0;
-  left: 0;
-  bottom: 1.5rem;
-}
 
 #scroll-text {
   /* animation properties */

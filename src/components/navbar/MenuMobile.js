@@ -1,40 +1,18 @@
-import React, { useRef, useContext, useState } from "react";
+import React, { useRef, useContext } from "react";
 import { CapacitorContext } from "../../context/CapacitorContext";
 import { MenuContext } from "../../context/MenuContext";
 import { AuthContext } from "../../context/AuthContext";
 import { navigate } from "@reach/router";
-import bunny from "../../assets/bunny.png";
-import { hasNotch } from "../../utils";
-import useTranslations from "../../hooks/useTranslations";
-import { getTabs, getTools } from "../../utils/menu";
+import { getValue, hasNotch } from "../../utils";
 import { AppConfigContext } from "../../context/AppConfigContext";
 
 const MenuMobile = () => {
   const toggleMenuButton = useRef(null);
 
-  const translations = useTranslations();
-  const { lang } = translations;
-
   const { signOut } = useContext(AuthContext);
   const appconfig = useContext(AppConfigContext);
-  const {
-    userSettingTabs,
-    organizationTabs,
-    toolsTabs,
-    adminTabs,
-    tabs,
-    selected,
-  } = useContext(MenuContext);
   const { device, platform } = useContext(CapacitorContext);
-
-  const [showSubMenuTabs, setShowSubMenuTabs] = useState({});
-
-  const toggleTabs = (categoryKey) => {
-    setShowSubMenuTabs((prev) => ({
-      ...prev,
-      [categoryKey]: !prev[categoryKey],
-    }));
-  };
+  const { userSettingTabs, selected } = useContext(MenuContext);
 
   const renderHeader = () =>
     selected && (
@@ -59,65 +37,6 @@ const MenuMobile = () => {
       </button>
     );
 
-  const renderTabs = (tabsItems) =>
-    tabsItems.map((tab) => (
-      <div
-        className="p-2 text-dark hover-accent no-decoration border-top border-bottom"
-        key={tab.link}
-        onClick={() => {
-          toggleMenuButton.current.click();
-          navigate(tab.link);
-        }}
-      >
-        <div className="row w-100">
-          <div className="col-1">
-            <i className={tab.icon} />
-          </div>
-          <div className="col-11"> {tab.name[lang]}</div>
-        </div>
-      </div>
-    ));
-
-  const renderSubMenuTabs = (tabs) => {
-    return Object.keys(tabs).map((categoryKey) => {
-      const category = tabs[categoryKey];
-      const isOpen = showSubMenuTabs[categoryKey] || false;
-      if (category.name === "Tools") {
-        category.tabs = getTools(appconfig);
-      }
-      return (
-        <div
-          key={category.name}
-          style={{ paddingLeft: "12px" }}
-          className="text-dark hover-accent no-decoration border-top border-bottom"
-        >
-          <button
-            className="btn text-start text-dark d-flex w-100 ps-2"
-            onClick={() => toggleTabs(categoryKey)}
-          >
-            <div className="col-1">
-              <i className={category.icon} />
-            </div>
-            <div className="col-11 d-flex justify-content-between">
-              {" "}
-              {category.name}{" "}
-              <i className="fa fa-caret-down" aria-hidden="true"></i>{" "}
-            </div>
-          </button>
-          {isOpen && renderTabs(category.tabs)}
-        </div>
-      );
-    });
-  };
-
-  const renderNormalTabs = (tabs) => renderTabs(tabs);
-  const renderHomeButton = () =>
-    platform !== "web" && (
-      <button className="btn me-1" onClick={() => navigate("/")}>
-        <i className="fa fa-home"></i>
-      </button>
-    );
-
   return (
     <nav
       style={{ top: 32 }}
@@ -134,18 +53,15 @@ const MenuMobile = () => {
             <div className="navbar-brand py-0 me-auto">
               {" "}
               <img
-                src={bunny}
-                alt="Logo"
-                style={{ maxWidth: 45 }}
+                src={getValue(appconfig, "landing_logo_src")}
                 className="d-inline-block"
+                style={{ maxWidth: 45 }}
+                alt="Logo"
               />{" "}
               {renderHeader()}
             </div>
           </div>
-          <div className="col-6 pe-0 text-end">
-            {renderHomeButton()}
-            {renderMenuButton()}
-          </div>
+          <div className="col-6 pe-0 text-end">{renderMenuButton()}</div>
         </div>
         <div className="collapse navbar-collapse mw-100 pt-3" id="navbarNav">
           <nav className="navbar-nav me-auto text-start">
@@ -159,20 +75,15 @@ const MenuMobile = () => {
               <div className="row w-100">
                 <div className="col-1">
                   <img
-                    src={bunny}
+                    src={getValue(appconfig, "landing_logo_src")}
                     alt="Logo"
                     style={{ maxWidth: 25, marginLeft: -6 }}
                     className="d-inline-block"
                   />
                 </div>
-                <div className="col-11">Fetch</div>
+                <div className="col-11">Strategies</div>
               </div>
             </div>
-            {renderNormalTabs(getTabs(appconfig))}
-            {/* {renderSubMenuTabs(organizationTabs)} */}
-            {renderSubMenuTabs(toolsTabs)}
-            {renderSubMenuTabs(adminTabs)}
-            {renderSubMenuTabs(userSettingTabs)}
             <button
               className="btn btn-sm text-start text-danger mx-2 px-0 my-3"
               onClick={signOut}

@@ -45,7 +45,7 @@ const Landing = () => {
             Get Started
           </Link>
         </nav>
-        <div className="row hero-section align-items-center">
+        <div className="row pt-5 hero-section align-items-center">
           <div className="col-12 col-md-12 col-lg-7 mb-3">
             <h1 className={`${landing_text_className} display-2 bold`}>
               {renderTextValue("title")}

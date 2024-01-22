@@ -14,12 +14,10 @@ const Conversations = ({ tag }) => {
   const [filter, setFilter] = useState("");
 
   const translations = useTranslations();
-  const { user } = useContext(AuthContext);
-  const { getConversations, getAllTags, tags, conversation } =
+  const { getConversations, getAllTags, conversation } =
     useContext(ConversationsContext);
 
   const isTagsPath = window.location.pathname.includes("/conversation/tags/");
-  const isNotRootTagsPath = window.location.pathname !== "/conversation/tags";
 
   useEffect(() => {
     if (isTagsPath && tag) {
@@ -27,17 +25,12 @@ const Conversations = ({ tag }) => {
     } else if (!isTagsPath) {
       getConversations({ query, sortBy, archived: viewArchived });
       getAllTags({ query });
-      setSelected("Fetch");
     }
   }, [query, viewArchived, sortBy, tag]);
 
   useEffect(() => {
     getAllTags({ query });
   }, [conversation]);
-
-  const renderConversations = () => {
-    return <ConversationList />;
-  };
 
   return (
     <div className="container-fluid bg-white p-4 card position-relative h-100">
@@ -83,8 +76,7 @@ const Conversations = ({ tag }) => {
           </div>
         </div>
       </div>
-
-      {renderConversations()}
+      <ConversationList />
     </div>
   );
 };
