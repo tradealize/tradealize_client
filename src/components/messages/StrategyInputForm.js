@@ -116,6 +116,8 @@ const StrategyInputForm = ({
           e.preventDefault();
           handleSubmit({ prompt, files });
           setPrompt("");
+          setFiles([]);
+          setSrcSet([]);
         }}
         className="row"
       >

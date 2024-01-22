@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import Sorry from "./Sorry";
 import Upgrade from "./Upgrade";
 import Profile from "./Profile";
-import Admin from "./admin/Admin";
 import Conversations from "./Conversations";
 import Sidebar from "../components/global/Sidebar";
 import { Router, useLocation } from "@reach/router";
@@ -36,7 +35,6 @@ const Panel = () => {
           style={{ flex: 1 }}
         >
           <Sorry path="/sorry" />
-          <Admin path="/admin/*" />
           <Conversations path="/" />
           <Upgrade path="/upgrade" />
           <Profile path="/profile" />
