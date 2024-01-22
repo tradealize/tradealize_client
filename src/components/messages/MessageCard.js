@@ -82,6 +82,7 @@ const MessageCard = ({ message, handleCallback }) => {
       );
     }
     if (message.content === null) {
+      if (message.file !== null) return "";
       return translations.conversation.message.pending;
     }
     let { content } = message;
@@ -90,12 +91,17 @@ const MessageCard = ({ message, handleCallback }) => {
   };
   const renderFile = () => {
     if (message.file && message.file !== null) {
-      return (
-        <img
-          src={`${S3_ENDPOINT}/${message.file.name}.${message.file.type}`}
-          className="mw-100 w-100 d-block m-auto mb-3"
-        />
-      );
+      const src = `${S3_ENDPOINT}/${message.file.name}.${message.file.type}`;
+      if (["png", "jpg", "jpeg", "gif"].includes(message.file.type)) {
+        return <img src={src} className="mw-100 w-100 d-block m-auto mb-3" />;
+      }
+      if (["WAV", "MP3", "wav", "mp3"].includes(message.file.type)) {
+        return (
+          <audio controls>
+            <source src={src} type="audio/wav" />
+          </audio>
+        );
+      }
     }
   };
 
